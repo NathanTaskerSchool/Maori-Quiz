@@ -34,11 +34,39 @@ def number_question():
             return 0
 
 
+def day_question():
+    random_index = random.randint(0, 7)
+    if random.randint(0, 1) == 0:
+        # Maori Input
+        user_input = input(f'Input the Maori word for "{ENGLISH_DAYS[random_index]}": ')
+        if user_input.lower().strip() == MAORI_DAYS[random_index]:
+            print("Correct!")
+            return 1
+        else:
+            print(f"Incorrect. The Maori word for {ENGLISH_DAYS[random_index]} is {MAORI_DAYS[random_index]}.")
+            return 0
+    else:
+        # English
+        user_input = input(f'Input the English word for "{MAORI_DAYS[random_index]}": ')
+        if user_input.lower().strip() == ENGLISH_DAYS[random_index]:
+            print("Correct!")
+            return 1
+        else:
+            print(f"Incorrect. The English word for {MAORI_DAYS[random_index]} is {ENGLISH_DAYS[random_index]}.")
+            return 0
+
+
+def month_question():
+    return 0
+
+
 def ask_question(quiz_type):
     if quiz_type == "1":
         return number_question()
-    else:
-        print("quiz type not supported")
+    elif quiz_type == "2":
+        return day_question()
+    elif quiz_type == "3":
+        return month_question()
 
 
 def run_quiz(quiz_type, total_questions):
@@ -54,7 +82,7 @@ def run_quiz(quiz_type, total_questions):
 def get_total_questions():
     while True:
         try:
-            user_input = int(input("How many question would you like? Input a number: ").strip())
+            user_input = int(input("How many questions would you like? Input a number: ").strip())
             if user_input < 1:
                 print("Please enter a positive integer.")
             else:
