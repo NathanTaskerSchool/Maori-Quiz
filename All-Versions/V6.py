@@ -135,7 +135,11 @@ def ask_to_play_again():
         print("Invalid input. Please try again.")
 
 
-while True:
-    run_quiz(get_quiz_type(), get_total_questions())
-    if not ask_to_play_again():
-        break
+def start():
+    while True:
+        run_quiz(get_quiz_type(), get_total_questions())
+        if not ask_to_play_again():
+            break
+
+
+start()
