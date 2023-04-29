@@ -45,10 +45,10 @@ def run_quiz(quiz_type, total_questions):
     questions_left = total_questions
     score = 0
     while questions_left > 0:
-        print(f"- QUESTION #{total_questions - questions_left + 1}")
+        print(f"\n- QUESTION #{total_questions - questions_left + 1}")
         score += ask_question(quiz_type)
         questions_left -= 1
-    print(f"End of quiz. You scored {score}/{total_questions}.")
+    print(f"\nEnd of quiz. You scored {score}/{total_questions}.")
 
 
 def get_total_questions():
@@ -65,7 +65,7 @@ def get_total_questions():
 
 
 def get_quiz_type():
-    print("""Learn the following options in Maori:
+    print("""\nLearn the following options in Maori:
 1. Numbers
 2. Days
 3. Months""")
