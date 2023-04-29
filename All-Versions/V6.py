@@ -86,7 +86,7 @@ def ask_question(quiz_type):
     elif quiz_type == "2":
         return day_question()
     elif quiz_type == "3":
-        month_question()
+        return month_question()
 
 
 def run_quiz(quiz_type, total_questions):
