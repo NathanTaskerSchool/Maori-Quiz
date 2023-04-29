@@ -8,14 +8,18 @@ MAORI_MONTHS = ["kohi-tatea", "hui-tanguru", "poutu-te-rangi", "paenga-whawha", 
 ENGLISH_MONTHS = ["january", "february", "march", "april", "may", "june"]
 
 
-def run_quiz(total_questions, quiz_type):
+def ask_question(quiz_type):
+    print("question asked")
+
+
+def run_quiz(quiz_type, total_questions):
     questions_left = total_questions
     while questions_left > 0:
-        ask_numbers_question()
+        ask_question(quiz_type)
         questions_left -= 1
 
 
-def get_questions_amount():
+def get_total_questions():
     while True:
         try:
             user_input = int(input("How many question would you like? Input a number: "))
@@ -28,16 +32,7 @@ def get_questions_amount():
     return user_input
 
 
-def get_quiz(user_input):
-    if user_input == "1":
-        run_quiz(get_questions_amount(), 1)
-    elif user_input == "2":
-        run_quiz(get_questions_amount(), 1)
-    elif user_input == "3":
-        run_quiz(get_questions_amount(), 1)
-
-
-def get_quiz_choice():
+def get_quiz_type():
     print("""Learn the following options in Maori:
 1. Numbers
 2. Days
@@ -45,11 +40,22 @@ def get_quiz_choice():
     while True:
         user_input = input("What would you like to learn? Input 1-3: ")
         if user_input == "1" or user_input == "2" or user_input == "3":
-            break
+            return user_input
         else:
             print("Invalid Input. Please try again.")
-    return user_input
 
 
-choice = get_quiz_choice()
-get_quiz(choice)
+def ask_to_play_again():
+    while True:
+        user_input = input("Would you like to play another quiz? Input y/n: ")
+        if user_input == "y":
+            return True
+        elif user_input == "n":
+            return False
+        print("Invalid input. Please try again.")
+
+
+while True:
+    run_quiz(get_quiz_type(), get_total_questions())
+    if not ask_to_play_again():
+        break
