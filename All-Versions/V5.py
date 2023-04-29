@@ -5,8 +5,10 @@ ENGLISH_NUMBERS = ["zero", "one", "two", "three", "four", "five", "six", "seven"
 NUMBERS = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
 MAORI_DAYS = ["ratapu", "rahina", "ratu", "raapa", "rapare", "ramere", "rahoroi"]
 ENGLISH_DAYS = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"]
-MAORI_MONTHS = ["kohi-tatea", "hui-tanguru", "poutu-te-rangi", "paenga-whawha", "haratua", "pipiri"]
-ENGLISH_MONTHS = ["january", "february", "march", "april", "may", "june"]
+MAORI_MONTHS = ["kohi-tatea", "hui-tanguru", "poutu-te-rangi", "paenga-whawha", "haratua", "pipiri",
+                "hongongoi", "here-turi-koka", "mahuru", "whiringa-a-nuku", "whiringa-a-rangi", "hakihea"]
+ENGLISH_MONTHS = ["january", "february", "march", "april", "may", "june",
+                  "july", "august", "september", "october", "november", "december"]
 
 
 def number_question():
@@ -35,7 +37,7 @@ def number_question():
 
 
 def day_question():
-    random_index = random.randint(0, 7)
+    random_index = random.randint(0, 6)
     if random.randint(0, 1) == 0:
         # Maori Input
         user_input = input(f'Input the Maori word for "{ENGLISH_DAYS[random_index]}": ')
@@ -46,7 +48,7 @@ def day_question():
             print(f"Incorrect. The Maori word for {ENGLISH_DAYS[random_index]} is {MAORI_DAYS[random_index]}.")
             return 0
     else:
-        # English
+        # English Input
         user_input = input(f'Input the English word for "{MAORI_DAYS[random_index]}": ')
         if user_input.lower().strip() == ENGLISH_DAYS[random_index]:
             print("Correct!")
@@ -56,17 +58,13 @@ def day_question():
             return 0
 
 
-def month_question():
-    return 0
-
-
 def ask_question(quiz_type):
     if quiz_type == "1":
         return number_question()
     elif quiz_type == "2":
         return day_question()
     elif quiz_type == "3":
-        return month_question()
+        print("month question")
 
 
 def run_quiz(quiz_type, total_questions):
