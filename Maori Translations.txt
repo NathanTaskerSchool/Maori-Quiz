@@ -1,0 +1,20 @@
+Monday = Rāhina
+Tuesday = Rātū
+Wednesday = Rāapa
+Thursday = Rāpare
+Friday = Rāmere
+Saturday = Rāhoroi
+Sunday = Rātapu
+
+January = Kohi-tātea
+February = Hui-tanguru
+March = Poutū-te-rangi
+April = Paenga-whāwhā
+May = Haratua
+June = Pipiri
+July = Hōngongoi
+August = Here-turi-kōkā
+September= Mahuru
+October = Whiringa-ā-nuku
+November Whiringa-ā-rangi
+December = Hakihea
