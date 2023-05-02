@@ -23,7 +23,8 @@ def number_question():
             print("Correct!")
             return 1
         else:
-            print(f"Incorrect. The Maori word for {ENGLISH_NUMBERS[random_index]} is {MAORI_NUMBERS[random_index]}.")
+            print(f'Incorrect. The Maori word for "{ENGLISH_NUMBERS[random_index]}" is '
+                  f'"{MAORI_NUMBERS[random_index]}".')
             return 0
     else:
         # 50% chance that the user must input a number or English word
@@ -32,7 +33,8 @@ def number_question():
             print("Correct!")
             return 1
         else:
-            print(f"Incorrect. The English word for {MAORI_NUMBERS[random_index]} is {ENGLISH_NUMBERS[random_index]}.")
+            print(f'Incorrect. The English word for "{MAORI_NUMBERS[random_index]}" is '
+                  f'"{ENGLISH_NUMBERS[random_index]}".')
             return 0
 
 
@@ -45,7 +47,7 @@ def day_question():
             print("Correct!")
             return 1
         else:
-            print(f"Incorrect. The Maori word for {ENGLISH_DAYS[random_index]} is {MAORI_DAYS[random_index]}.")
+            print(f'Incorrect. The Maori word for "{ENGLISH_DAYS[random_index]}" is "{MAORI_DAYS[random_index]}".')
             return 0
     else:
         # 50% chance that the user must input an English word
@@ -54,7 +56,7 @@ def day_question():
             print("Correct!")
             return 1
         else:
-            print(f"Incorrect. The English word for {MAORI_DAYS[random_index]} is {ENGLISH_DAYS[random_index]}.")
+            print(f'Incorrect. The English word for "{MAORI_DAYS[random_index]}" is "{ENGLISH_DAYS[random_index]}".')
             return 0
 
 
@@ -67,7 +69,7 @@ def month_question():
             print("Correct!")
             return 1
         else:
-            print(f"Incorrect. The Maori word for {ENGLISH_MONTHS[random_index]} is {MAORI_MONTHS[random_index]}.")
+            print(f'Incorrect. The Maori word for "{ENGLISH_MONTHS[random_index]}" is "{MAORI_MONTHS[random_index]}".')
             return 0
     else:
         # 50% chance that the user must input an English word
@@ -76,7 +78,7 @@ def month_question():
             print("Correct!")
             return 1
         else:
-            print(f"Incorrect. The English word for {MAORI_MONTHS[random_index]} is {ENGLISH_MONTHS[random_index]}.")
+            print(f'Incorrect. The English word for "{MAORI_MONTHS[random_index]}" is "{ENGLISH_MONTHS[random_index]}".')
             return 0
 
 
@@ -127,7 +129,7 @@ def get_quiz_type():
 
 def ask_to_play_again():
     while True:
-        user_input = input("Would you like to play another quiz? Input y/n: ")
+        user_input = input("Would you like to play another quiz? Input y/n: ").lower().strip()
         if user_input == "y":
             return True
         elif user_input == "n":
