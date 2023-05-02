@@ -78,7 +78,8 @@ def month_question():
             print("Correct!")
             return 1
         else:
-            print(f'Incorrect. The English word for "{MAORI_MONTHS[random_index]}" is "{ENGLISH_MONTHS[random_index]}".')
+            print(f'Incorrect. The English word for "{MAORI_MONTHS[random_index]}" is '
+                  f'"{ENGLISH_MONTHS[random_index]}".')
             return 0
 
 
