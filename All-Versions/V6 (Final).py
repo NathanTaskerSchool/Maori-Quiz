@@ -3,12 +3,12 @@ import random
 MAORI_NUMBERS = ["kore", "tahi", "rua", "toru", "wha", "rima", "ono", "whitu", "waru", "iwa", "tekau"]
 ENGLISH_NUMBERS = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"]
 NUMBERS = [str(i) for i in range(11)]
-MAORI_DAYS = ["ratapu", "rahina", "ratu", "raapa", "rapare", "ramere", "rahoroi"]
-ENGLISH_DAYS = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"]
-MAORI_MONTHS = ["kohi-tatea", "hui-tanguru", "poutu-te-rangi", "paenga-whawha", "haratua", "pipiri",
-                "hongongoi", "here-turi-koka", "mahuru", "whiringa-a-nuku", "whiringa-a-rangi", "hakihea"]
-ENGLISH_MONTHS = ["january", "february", "march", "april", "may", "june",
-                  "july", "august", "september", "october", "november", "december"]
+MAORI_DAYS = ["Ratapu", "Rahina", "Ratu", "Raapa", "Rapare", "Ramere", "Rahoroi"]
+ENGLISH_DAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+MAORI_MONTHS = ["Kohi-tatea", "Hui-tanguru", "Poutu-te-rangi", "Paenga-whawha", "Haratua", "Pipiri",
+                "Hongongoi", "Here-turi-koka", "Mahuru", "Whiringa-a-nuku", "Whiringa-a-rangi", "Hakihea"]
+ENGLISH_MONTHS = ["January", "February", "March", "April", "May", "June",
+                  "July", "August", "September", "October", "November", "December"]
 NUMBERS_QUIZ_INDEX = 1
 DAYS_QUIZ_INDEX = 2
 MONTHS_QUIZ_INDEX = 3
