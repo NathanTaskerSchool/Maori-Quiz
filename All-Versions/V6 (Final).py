@@ -14,6 +14,7 @@ DAYS_QUIZ_INDEX = 2
 MONTHS_QUIZ_INDEX = 3
 
 
+# Asks the user a randomly generated number question, returning a score value
 def number_question():
     random_index = random.randint(0, 10)
     if random.randint(0, 1) == 0:
@@ -38,6 +39,7 @@ def number_question():
             return 0
 
 
+# Asks the user a randomly generated day question, returning a score value
 def day_question():
     random_index = random.randint(0, 6)
     if random.randint(0, 1) == 0:
@@ -60,6 +62,7 @@ def day_question():
             return 0
 
 
+# Asks the user a randomly generated month question, returning a score value
 def month_question():
     random_index = random.randint(0, 11)
     if random.randint(0, 1) == 0:
@@ -83,6 +86,7 @@ def month_question():
             return 0
 
 
+# Calls the correct function depending on the given parameter (quiz_index)
 def ask_question(quiz_index):
     if quiz_index == NUMBERS_QUIZ_INDEX:
         return number_question()
@@ -92,6 +96,7 @@ def ask_question(quiz_index):
         return month_question()
 
 
+# Asks a new question as long as it hasn't reached the value previously input as questions wanted by the user
 def run_quiz(quiz_type, total_questions):
     questions_left = total_questions
     score = 0
@@ -102,6 +107,7 @@ def run_quiz(quiz_type, total_questions):
     print(f"\nEnd of quiz. You scored {score}/{total_questions}.")
 
 
+# Asks the user how many questions they would like to be quizzed on, and accepts the input if it is a positive integer
 def get_total_questions():
     while True:
         try:
@@ -115,6 +121,7 @@ def get_total_questions():
     return user_input
 
 
+# This function displays the quiz types available and asks the user what they want to learn, returning if input is valid
 def get_quiz_type():
     print(f"""\nLearn the following options in Maori:
 {NUMBERS_QUIZ_INDEX}. NUMBERS
@@ -128,6 +135,7 @@ def get_quiz_type():
             print("Invalid Input. Please try again.")
 
 
+# This function simply asks the user if they want to play again, returning either true or false depending on their input
 def ask_to_play_again():
     while True:
         user_input = input("Would you like to play another quiz? Input y/n: ").lower().strip()
@@ -138,6 +146,7 @@ def ask_to_play_again():
         print("Invalid input. Please try again.")
 
 
+# This function is an infinite loop that will only break and end the program once the user decides to no longer play
 def start():
     while True:
         run_quiz(get_quiz_type(), get_total_questions())
