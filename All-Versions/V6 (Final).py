@@ -115,10 +115,9 @@ def get_total_questions():
             if user_input < 1:
                 print("Please enter a positive integer.")
             else:
-                break
+                return user_input
         except ValueError:
             print("Please enter a valid integer.")
-    return user_input
 
 
 # This function displays the quiz types available and asks the user what they want to learn, returning if input is valid
