@@ -98,12 +98,12 @@ def ask_question(quiz_index):
 
 # Asks a new question as long as it hasn't reached the value previously input as questions wanted by the user
 def run_quiz(quiz_type, total_questions):
-    questions_left = total_questions
+    questions_asked = 0
     score = 0
-    while questions_left > 0:
-        print(f"\nQUESTION {total_questions - questions_left + 1}")
+    while questions_asked < total_questions:
+        print(f"\nQUESTION {questions_asked + 1}")
         score += ask_question(quiz_type)
-        questions_left -= 1
+        questions_asked += 1
     print(f"\nEnd of quiz. You scored {score}/{total_questions}.")
 
 
