@@ -1,14 +1,20 @@
 import random
 
-MAORI_NUMBERS = ["kore", "tahi", "rua", "toru", "wha", "rima", "ono", "whitu", "waru", "iwa", "tekau"]
-ENGLISH_NUMBERS = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"]
+MAORI_NUMBERS = ["kore", "tahi", "rua", "toru", "wha", "rima", "ono", "whitu",
+                 "waru", "iwa", "tekau"]
+ENGLISH_NUMBERS = ["zero", "one", "two", "three", "four", "five", "six",
+                   "seven", "eight", "nine", "ten"]
 NUMBERS = [str(i) for i in range(11)]
-MAORI_DAYS = ["ratapu", "rahina", "ratu", "raapa", "rapare", "ramere", "rahoroi"]
-ENGLISH_DAYS = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"]
-MAORI_MONTHS = ["kohi-tatea", "hui-tanguru", "poutu-te-rangi", "paenga-whawha", "haratua", "pipiri",
-                "hongongoi", "here-turi-koka", "mahuru", "whiringa-a-nuku", "whiringa-a-rangi", "hakihea"]
+MAORI_DAYS = ["ratapu", "rahina", "ratu", "raapa", "rapare", "ramere",
+              "rahoroi"]
+ENGLISH_DAYS = ["sunday", "monday", "tuesday", "wednesday", "thursday",
+                "friday", "saturday"]
+MAORI_MONTHS = ["kohi-tatea", "hui-tanguru", "poutu-te-rangi", "paenga-whawha",
+                "haratua", "pipiri", "hongongoi", "here-turi-koka", "mahuru",
+                "whiringa-a-nuku", "whiringa-a-rangi", "hakihea"]
 ENGLISH_MONTHS = ["january", "february", "march", "april", "may", "june",
-                  "july", "august", "september", "october", "november", "december"]
+                  "july", "august", "september", "october", "november",
+                  "december"]
 NUMBERS_QUIZ_INDEX = 1
 DAYS_QUIZ_INDEX = 2
 MONTHS_QUIZ_INDEX = 3
@@ -19,22 +25,27 @@ def number_question():
     random_index = random.randint(0, 10)
     if random.randint(0, 1) == 0:
         # 50% chance that the user must input a Maori word
-        user_input = input(f'Input the Maori word for "{ENGLISH_NUMBERS[random_index]}": ')
+        user_input = input(f'Input the Maori word for'
+                           f' "{ENGLISH_NUMBERS[random_index]}": ')
         if user_input.lower().strip() == MAORI_NUMBERS[random_index]:
             print("Correct!")
             return 1
         else:
-            print(f'Incorrect. The Maori word for "{ENGLISH_NUMBERS[random_index]}" is '
+            print(f'Incorrect. The Maori word for'
+                  f' "{ENGLISH_NUMBERS[random_index]}" is '
                   f'"{MAORI_NUMBERS[random_index]}".')
             return 0
     else:
         # 50% chance that the user must input a number or English word
-        user_input = input(f'Input the number or English word for "{MAORI_NUMBERS[random_index]}": ')
-        if user_input.lower().strip() in [ENGLISH_NUMBERS[random_index], NUMBERS[random_index]]:
+        user_input = input(f'Input the number or English word for'
+                           f' "{MAORI_NUMBERS[random_index]}": ')
+        if user_input.lower().strip() in [ENGLISH_NUMBERS[random_index],
+                                          NUMBERS[random_index]]:
             print("Correct!")
             return 1
         else:
-            print(f'Incorrect. The English word for "{MAORI_NUMBERS[random_index]}" is '
+            print(f'Incorrect. The English word for'
+                  f' "{MAORI_NUMBERS[random_index]}" is '
                   f'"{ENGLISH_NUMBERS[random_index]}".')
             return 0
 
@@ -44,21 +55,27 @@ def day_question():
     random_index = random.randint(0, 6)
     if random.randint(0, 1) == 0:
         # 50% chance that the user must input a Maori word
-        user_input = input(f'Input the Maori word for "{ENGLISH_DAYS[random_index]}": ')
+        user_input = input(f'Input the Maori word for'
+                           f' "{ENGLISH_DAYS[random_index]}": ')
         if user_input.lower().strip() == MAORI_DAYS[random_index]:
             print("Correct!")
             return 1
         else:
-            print(f'Incorrect. The Maori word for "{ENGLISH_DAYS[random_index]}" is "{MAORI_DAYS[random_index]}".')
+            print(f'Incorrect. The Maori word for'
+                  f' "{ENGLISH_DAYS[random_index]}" is'
+                  f' "{MAORI_DAYS[random_index]}".')
             return 0
     else:
         # 50% chance that the user must input an English word
-        user_input = input(f'Input the English word for "{MAORI_DAYS[random_index]}": ')
+        user_input = input(f'Input the English word for'
+                           f' "{MAORI_DAYS[random_index]}": ')
         if user_input.lower().strip() == ENGLISH_DAYS[random_index]:
             print("Correct!")
             return 1
         else:
-            print(f'Incorrect. The English word for "{MAORI_DAYS[random_index]}" is "{ENGLISH_DAYS[random_index]}".')
+            print(f'Incorrect. The English word for'
+                  f' "{MAORI_DAYS[random_index]}" is'
+                  f' "{ENGLISH_DAYS[random_index]}".')
             return 0
 
 
@@ -67,21 +84,26 @@ def month_question():
     random_index = random.randint(0, 11)
     if random.randint(0, 1) == 0:
         # 50% chance that the user must input a Maori word
-        user_input = input(f'Input the Maori word for "{ENGLISH_MONTHS[random_index]}": ')
+        user_input = input(f'Input the Maori word for'
+                           f' "{ENGLISH_MONTHS[random_index]}": ')
         if user_input.lower().strip() == MAORI_MONTHS[random_index]:
             print("Correct!")
             return 1
         else:
-            print(f'Incorrect. The Maori word for "{ENGLISH_MONTHS[random_index]}" is "{MAORI_MONTHS[random_index]}".')
+            print(f'Incorrect. The Maori word for'
+                  f' "{ENGLISH_MONTHS[random_index]}" is'
+                  f' "{MAORI_MONTHS[random_index]}".')
             return 0
     else:
         # 50% chance that the user must input an English word
-        user_input = input(f'Input the English word for "{MAORI_MONTHS[random_index]}": ')
+        user_input = input(f'Input the English word for'
+                           f' "{MAORI_MONTHS[random_index]}": ')
         if user_input.lower().strip() == ENGLISH_MONTHS[random_index]:
             print("Correct!")
             return 1
         else:
-            print(f'Incorrect. The English word for "{MAORI_MONTHS[random_index]}" is '
+            print(f'Incorrect. The English word for'
+                  f' "{MAORI_MONTHS[random_index]}" is '
                   f'"{ENGLISH_MONTHS[random_index]}".')
             return 0
 
@@ -96,7 +118,8 @@ def ask_question(quiz_index):
         return month_question()
 
 
-# Asks a new question as long as it hasn't reached the value previously input as questions wanted by the user
+# Asks a new question as long as it hasn't reached the value previously input
+# as questions wanted by the user
 def run_quiz(quiz_type, total_questions):
     questions_asked = 0
     score = 0
@@ -107,11 +130,13 @@ def run_quiz(quiz_type, total_questions):
     print(f"\nEnd of quiz. You scored {score}/{total_questions}.")
 
 
-# Asks the user how many questions they would like to be quizzed on, and accepts the input if it is a positive integer
+# Asks the user how many questions they would like to be quizzed on, and
+# accepts the input if it is a positive integer
 def get_total_questions():
     while True:
         try:
-            user_input = int(input("How many questions would you like? Input a number: ").strip())
+            user_input = int(input("How many questions would you like? Input a"
+                                   " number: ").strip())
             if user_input < 1:
                 print("Please enter a positive integer.")
             else:
@@ -120,7 +145,8 @@ def get_total_questions():
             print("Please enter a valid integer.")
 
 
-# This function displays the quiz types available and asks the user what they want to learn, returning if input is valid
+# This function displays the quiz types available and asks the user what they
+# want to learn, returning if input is valid
 def get_quiz_type():
     print(f"""\nLearn the following options in Maori:
 {NUMBERS_QUIZ_INDEX}. NUMBERS
@@ -128,16 +154,19 @@ def get_quiz_type():
 {MONTHS_QUIZ_INDEX}. MONTHS""")
     while True:
         user_input = input("What would you like to learn? Input 1-3: ").strip()
-        if user_input in str([NUMBERS_QUIZ_INDEX, DAYS_QUIZ_INDEX, MONTHS_QUIZ_INDEX]):
+        if user_input in str([NUMBERS_QUIZ_INDEX, DAYS_QUIZ_INDEX,
+                              MONTHS_QUIZ_INDEX]):
             return int(user_input)
         else:
             print("Invalid Input. Please try again.")
 
 
-# This function simply asks the user if they want to play again, returning either true or false depending on their input
+# This function simply asks the user if they want to play again, returning
+# either true or false depending on their input
 def ask_to_play_again():
     while True:
-        user_input = input("Would you like to play another quiz? Input y/n: ").lower().strip()
+        user_input = input("Would you like to play another quiz?"
+                           " Input y/n: ").lower().strip()
         if user_input == "y":
             return True
         elif user_input == "n":
@@ -145,7 +174,8 @@ def ask_to_play_again():
         print("Invalid input. Please try again.")
 
 
-# This function is an infinite loop that will only break and end the program once the user decides to no longer play
+# This function is an infinite loop that will only break and end the program
+# once the user decides to no longer play
 def start():
     while True:
         run_quiz(get_quiz_type(), get_total_questions())
